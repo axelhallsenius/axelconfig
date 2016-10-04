@@ -1,0 +1,50 @@
+2016-09-09T08:22:09.474Z - info: Failed to get messages from webapp: Cannot read property 'getActiveModelOb' of undefined
+2016-09-09T08:27:21.646Z - info: Attempting detection, string length: 10
+2016-09-09T08:27:22.333Z - info: Window is unloading, winssb is no longer accessible
+2016-09-09T08:27:22.997Z - info: Window is unloading, winssb is no longer accessible
+2016-09-09T08:27:30.938Z - info: Attempting detection, string length: 14
+2016-09-09T08:27:30.973Z - info: Auto-detected language as gd
+2016-09-09T08:27:31.014Z - info: Raw Locale list: ["C","POSIX","sv_SE.utf8",""]
+2016-09-09T08:27:31.014Z - info: Filtered Locale list: ["sv_SE"]
+2016-09-09T08:27:31.015Z - info: Counts: {"sv":["sv_SE"]}
+2016-09-09T08:27:31.015Z - info: Setting sv
+2016-09-09T08:27:31.016Z - info: Result: {"sv":"sv-SE"}
+2016-09-09T08:27:31.019Z - info: Requesting to load gd-GB, alternatives are ["gd-GB","gd-GB","gd-GB"]
+2016-09-09T08:27:31.023Z - info: Loading dictionary for language gd-GB
+2016-09-09T08:27:31.024Z - info: Actually downloading https://redirector.gvt1.com/edgedl/chrome/dict/gd-gb-3-0.bdic
+2016-09-09T08:27:31.870Z - info: Attempting detection, string length: 15
+2016-09-09T08:27:31.871Z - info: Auto-detected language as gd
+2016-09-09T08:27:31.873Z - info: Requesting to load gd-GB, alternatives are ["gd-GB","gd-GB","gd-GB"]
+2016-09-09T08:27:31.873Z - info: Loading dictionary for language gd-GB
+2016-09-09T08:27:31.874Z - info: Actually downloading https://redirector.gvt1.com/edgedl/chrome/dict/gd-gb-3-0.bdic
+2016-09-09T08:27:32.202Z - info: Loading dictionary for language gd-GB
+2016-09-09T08:27:32.202Z - info: Returning local copy: /home/haxxel/.config/Slack/dictionaries/gd-GB.bdic
+2016-09-09T08:27:32.206Z - info: Failed to read file /home/haxxel/.config/Slack/dictionaries/gd-GB.bdic: File exists but is most likely bogus
+2016-09-09T08:27:32.207Z - info: Actually downloading https://redirector.gvt1.com/edgedl/chrome/dict/gd-gb-3-0.bdic
+2016-09-09T08:27:32.379Z - info: Loading dictionary for language gd-GB
+2016-09-09T08:27:32.379Z - info: Returning local copy: /home/haxxel/.config/Slack/dictionaries/gd-GB.bdic
+2016-09-09T08:27:32.381Z - info: Failed to read file /home/haxxel/.config/Slack/dictionaries/gd-GB.bdic: File exists but is most likely bogus
+2016-09-09T08:27:32.381Z - info: Actually downloading https://redirector.gvt1.com/edgedl/chrome/dict/gd-gb-3-0.bdic
+2016-09-09T08:27:32.541Z - info: Failed to load dictionary gd-GB: Cannot read property 'dictionary' of undefined
+2016-09-09T08:27:32.542Z - info: Failed to load dictionary: Cannot read property 'dictionary' of undefined
+2016-09-09T08:27:32.878Z - info: Loading dictionary for language gd-GB
+2016-09-09T08:27:32.878Z - info: Returning local copy: /home/haxxel/.config/Slack/dictionaries/gd-GB.bdic
+2016-09-09T08:27:32.879Z - info: Failed to read file /home/haxxel/.config/Slack/dictionaries/gd-GB.bdic: File exists but is most likely bogus
+2016-09-09T08:27:32.879Z - info: Actually downloading https://redirector.gvt1.com/edgedl/chrome/dict/gd-gb-3-0.bdic
+2016-09-09T08:27:33.064Z - info: Loading dictionary for language gd-GB
+2016-09-09T08:27:33.065Z - info: Returning local copy: /home/haxxel/.config/Slack/dictionaries/gd-GB.bdic
+2016-09-09T08:27:33.065Z - info: Failed to read file /home/haxxel/.config/Slack/dictionaries/gd-GB.bdic: File exists but is most likely bogus
+2016-09-09T08:27:33.066Z - info: Actually downloading https://redirector.gvt1.com/edgedl/chrome/dict/gd-gb-3-0.bdic
+2016-09-09T08:27:33.240Z - info: Failed to load dictionary gd-GB: Cannot read property 'dictionary' of undefined
+2016-09-09T08:27:35.320Z - info: Failed to get messages from webapp: Cannot read property 'getActiveModelOb' of undefined
+2016-09-09T08:27:43.422Z - info: Window is unloading, winssb is no longer accessible
+2016-09-09T08:27:44.499Z - info: Window is unloading, winssb is no longer accessible
+2016-09-09T08:27:46.851Z - info: ADD_NEW_TEAM : {
+  "id": "U287GKYLX",
+  "name": "haxxel",
+  "team_id": "T284RQWQL",
+  "team_name": "DV",
+  "team_url": "https://dv-uppsala.slack.com/"
+}
+2016-09-09T08:27:46.860Z - info: SET_LOGIN_DIALOG 
+2016-09-09T08:27:47.505Z - info: Unloading spellchecker
