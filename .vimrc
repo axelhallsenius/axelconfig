@@ -21,6 +21,10 @@ Plugin 'https://github.com/tpope/vim-unimpaired'
 "YouCompleteMe - Nice fuzzy autocompleter 
 Plugin 'https://github.com/Valloric/YouCompleteMe'
 
+"???
+"vim-slim - Syntax highlighting
+Plugin 'slim-template/vim-slim.git'
+
 "Airline - fine stuff
 Plugin 'https://github.com/vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -40,6 +44,12 @@ Plugin 'honza/vim-snippets'
 "Fugitive - Git integration
 Plugin 'https://github.com/tpope/vim-fugitive'
 
+"Vim Multiple Cursors - Sublime Text style multiple cursors
+Plugin 'terryma/vim-multiple-cursors' 
+
+"Rainbow Parenthesis - pairs parens by color
+"Plugin 'kien/rainbow_parentheses.vim'
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -47,16 +57,16 @@ filetype plugin indent on    " required
 "-------- Syntax Stuff ------
 
 "Enable syntax highlighting
-syntax on
+syntax enable
 
 "Enables line numbers on the left
 set number
 
-"--------- Key Remaps --------
-
 "makes tabspace 2 spaces
 set tabstop=2
 set shiftwidth=2
+
+"--------- Key Remaps --------
 
 "binds åå to return to normal mode 
 imap åå <Esc> <Esc>
@@ -81,7 +91,7 @@ map <Leader>l <C-W>l
 "quick commands for write and splitting screen
 map <Leader>w :w<CR>
 map <Leader>e :e 
-map <Leader>q :wq<CR>
+map <Leader>q :bdelete<CR>
 
 "--buffer movement--
 "map <M>1 :buffer1
@@ -97,6 +107,8 @@ map <Leader>q :wq<CR>
 
 map <Leader>n :bn<CR>
 map <Leader>b :bp<CR>
+
+map <Leader>r :substitute 
 
 
 "-- EasyMotion --
@@ -161,9 +173,9 @@ set laststatus=2
 "let g:airline_right_sep = '◀'
 "let g:airline_symbols.linenr = '␊'
 "let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = 'L'
+"let g:airline_symbols.linenr = 'L'
 let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.branch = 'L'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
@@ -193,3 +205,6 @@ function RangerExplorer()
 	redraw!
 endfun
 map <Leader>x :call RangerExplorer()<CR>
+
+"--Rainbow Parenthesis - pairs parentheses color wise --
+"WIP

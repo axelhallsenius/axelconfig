@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# --- Alias Zone --- #
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
@@ -15,22 +16,15 @@ alias gim='git commit -m'
 
 alias wf='sudo wifi-menu'
 
+alias cap='scrot -u -d 2'
+
+alias rstime='sudo ntpdate 0.arch.pool.ntp.org'
+
 alias ts='./nonpac/ts/ts3client_runscript.sh'
+
+alias tes='make -s test'
+
+# --- /Alias Zone --- #
 
 export VISUAL=vim
 export EDITOR=vim
-
-
-#export LANG='en_US.UTF-8'
-#export LC_ALL='en_US.UTF-8'
-
-#Powerline
-                                        
-                                        
-#function _update_ps1() {
-#    PS1="$(~/powerline-shell.py $? 2> /dev/null)"
-#}
-#
-#if [ "$TERM" != "linux" ]; then
-#    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-#fi

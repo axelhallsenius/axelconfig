@@ -83,7 +83,7 @@ URxvt*color15 : #EEEEEC
 ! URxvt*borderColor: colour
 
 ! Select the fonts to be used. This is a comma separated list of font names that are checked in order when trying to find
-URxvt*font: xft:Inconsolata-dz-Powerline:pixelsize=7
+URxvt*font: xft:Inconsolata\ for\ Powerline:pixelsize=16
 !URxvt*BoldFont: xft:Anonymous Pro:pixelsize=13:style=Bold
 
 ! 
