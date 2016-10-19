@@ -28,7 +28,8 @@ Plugin 'vim-airline/vim-airline-themes'
 "EasyMotion - smooth movement by searching for single chars
 Plugin 'https://github.com/easymotion/vim-easymotion'
 
-"-Ultisnips-
+"Noctu - color scheme stuff
+Plugin 'noahfrederick/vim-noctu'
 
 "Track the engine.
 Plugin 'SirVer/ultisnips'
@@ -61,15 +62,42 @@ set shiftwidth=2
 imap åå <Esc> <Esc>
 vmap åå <Esc> <Esc>
 
+"Maps J to make a new line
+map J o<Esc>
+
+"maps space to be the Leader command.
 map <Space> <Leader>
 
+"Moves words like a Ctrl+arrow would in Word
 map H B
 map L W
 
+"switch active buffer between those on screen using space and directionals
+map <Leader>h <C-W>h
+map <Leader>j <C-W>j
+map <Leader>k <C-W>k
+map <Leader>l <C-W>l
 
-"map <Ctrl>-H
+"quick commands for write and splitting screen
+map <Leader>w :w<CR>
+map <Leader>e :e 
+map <Leader>q :wq<CR>
 
-"map W :w
+"--buffer movement--
+"map <M>1 :buffer1
+"map <M>2 :buffer2
+"map <M-3> :buffer3
+"map <M-4> :buffer4
+"map <M-5> :buffer5
+"map <M-6> :buffer6
+"map <M-7> :buffer7
+"map <M-8> :buffer8
+"map <M-9> :buffer9
+"map <M-0> :buffer0
+
+map <Leader>n :bn<CR>
+map <Leader>b :bp<CR>
+
 
 "-- EasyMotion --
 
@@ -85,8 +113,8 @@ map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
 
 "Easymove to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
+map  <Leader>g <Plug>(easymotion-bd-w)
+nmap <Leader>g <Plug>(easymotion-overwin-w)
 
 "sys clipboard yank and paste
 "
@@ -114,35 +142,54 @@ let g:UltiSnipsEditSplit="vertical"
 
 "--Airline--
 if !exists('g:airline_symbols')
-	  let g:airline_symbols = {}
+	let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
 
 let g:airline_powerline_fonts = 1
 set laststatus=2
 
+
+
+"sets font
+"set guifont='Inconsolata for powerline':h14
+
 "unicode symbols
 "let g:airline_left_sep = '»'
 "let g:airline_left_sep = '▶'
 "let g:airline_right_sep = '«'
 "let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = 'L'
 let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 "powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
 
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-"let g:airline_theme='<base16>'
+let g:airline_theme='jellybeans'
 set noshowmode
+
+colorscheme noctu
+
+"--Ranger File Manager - integration
+function RangerExplorer()
+	exec "silent !ranger --choosefile=/tmp/vim_ranger_current_file " . expand("%:p:h")
+	if filereadable('/tmp/vim_ranger_current_file')
+		exec 'edit ' . system('cat /tmp/vim_ranger_current_file')
+		call system('rm /tmp/vim_ranger_current_file')
+	endif
+	redraw!
+endfun
+map <Leader>x :call RangerExplorer()<CR>
