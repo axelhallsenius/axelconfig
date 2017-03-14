@@ -9,22 +9,22 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-alias ins='sudo pacman -S'
-alias upg='sudo pacman -Syu'
+alias ll='ls -l'
 
-alias gim='git commit -m'
+alias install='sudo pacman -S'
+alias upgrade='sudo pacman -Syyu'
 
-alias wf='sudo wifi-menu'
+alias wifi='sudo wifi-menu'
 
-alias cap='scrot -u -d 2'
+alias capture='scrot -u -d 2'
 
 alias rstime='sudo ntpdate 0.arch.pool.ntp.org'
 
-alias ts='./nonpac/ts/ts3client_runscript.sh'
-
-alias tes='make -s test'
 
 # --- /Alias Zone --- #
 
 export VISUAL=vim
 export EDITOR=vim
+
+# Makes less cozier
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"

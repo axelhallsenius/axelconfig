@@ -18,6 +18,9 @@ Plugin 'https://github.com/tpope/vim-unimpaired'
 "UlitSnips - Snipet thingie
 "Plugin 'https://github.com/SirVer/ultisnips.git'
 
+"Moar Colorschemes - flazz
+Plugin 'flazz/vim-colorschemes'
+
 "YouCompleteMe - Nice fuzzy autocompleter 
 Plugin 'https://github.com/Valloric/YouCompleteMe'
 
@@ -45,10 +48,13 @@ Plugin 'honza/vim-snippets'
 Plugin 'https://github.com/tpope/vim-fugitive'
 
 "Vim Multiple Cursors - Sublime Text style multiple cursors
-Plugin 'terryma/vim-multiple-cursors' 
+"Plugin 'terryma/vim-multiple-cursors' 
 
 "Rainbow Parenthesis - pairs parens by color
 "Plugin 'kien/rainbow_parentheses.vim'
+
+"Dark Tango color scheme
+Plugin 'vim-scripts/darktango.vim'
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -69,8 +75,8 @@ set shiftwidth=2
 "--------- Key Remaps --------
 
 "binds åå to return to normal mode 
-imap åå <Esc> <Esc>
-vmap åå <Esc> <Esc>
+imap öö <Esc> <Esc>
+vmap öö <Esc> <Esc>
 
 "Maps J to make a new line
 map J o<Esc>
@@ -105,8 +111,8 @@ map <Leader>q :bdelete<CR>
 "map <M-9> :buffer9
 "map <M-0> :buffer0
 
-map <Leader>n :bn<CR>
-map <Leader>b :bp<CR>
+map <Leader>k :bn<CR>
+map <Leader>j :bp<CR>
 
 map <Leader>r :substitute 
 
@@ -145,7 +151,7 @@ noremap <Leader>d "*d
 "-- UltiSnips --
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="öö"
+let g:UltiSnipsExpandTrigger="åå"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -161,11 +167,6 @@ let g:airline_symbols.space = "\ua0"
 let g:airline_powerline_fonts = 1
 set laststatus=2
 
-
-
-"sets font
-"set guifont='Inconsolata for powerline':h14
-
 "unicode symbols
 "let g:airline_left_sep = '»'
 "let g:airline_left_sep = '▶'
@@ -174,12 +175,12 @@ set laststatus=2
 "let g:airline_symbols.linenr = '␊'
 "let g:airline_symbols.linenr = '␤'
 "let g:airline_symbols.linenr = 'L'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = 'L'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = 'L'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.whitespace = 'Ξ'
 "powerline symbols
 "let g:airline_left_sep = ''
 "let g:airline_left_alt_sep = ''
@@ -190,10 +191,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme='jellybeans'
 set noshowmode
-
-colorscheme noctu
 
 "--Ranger File Manager - integration
 function RangerExplorer()
@@ -208,3 +206,9 @@ map <Leader>x :call RangerExplorer()<CR>
 
 "--Rainbow Parenthesis - pairs parentheses color wise --
 "WIP
+"
+
+" -- color scheme --
+colorscheme Tomorrow-Night-Eighties
+let g:airline_theme = 'ubaryd'
+" -- 
