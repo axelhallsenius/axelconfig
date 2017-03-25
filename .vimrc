@@ -56,6 +56,9 @@ Plugin 'https://github.com/tpope/vim-fugitive'
 "Dark Tango color scheme
 Plugin 'vim-scripts/darktango.vim'
 
+"Ctrl P - Fuzzy file search
+Plugin 'https://github.com/kien/ctrlp.vim.git'
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -145,6 +148,8 @@ noremap <Leader>d "*d
 "map <leader>y "*y
 "map <leader>p "*p
 
+"Makes space o do fuzzy file search
+nnoremap <Leader>o :CtrlP<CR>
 
 "----------- Plugin Sheisse ---------
 

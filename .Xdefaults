@@ -1,7 +1,18 @@
 URxvt*background: #2b2b2b
 
 ! Use the specified colour as the windows foreground colour [default Black]; option -fg.
-URxvt*foreground: #dedede
+!
+!white
+!URxvt*foreground: #dedede
+!
+!grey
+URxvt*foreground: #BFBFBF
+!
+!green
+#URxvt*foreground: #54E368
+!
+!blue
+!URxvt*foreground: #7DA3E8
 
 ! Use the specified colour for the colour value n, where 0-7 corresponds to low-intensity (normal) colours and 8-15
 ! URxvt*colorn: colour
