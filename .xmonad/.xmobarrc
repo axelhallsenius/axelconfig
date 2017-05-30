@@ -1,29 +1,30 @@
+-- TODO: change text colors
+-- TODO: || updating...
 Config { 
-     font =         "Terminus:style=Regular:size=10"
-   , bgColor =      "black"
-   , fgColor =      "#646464"
+     font =         "xft:Inconsolata-dz\ for\ Powerline:style=Regular:size=10"
+   , bgColor =      "#2d2d2d"
+   , fgColor =      "#d3d0c8"
    , position =     Top 
    , border =       BottomB
-   , borderColor =  "#646464"
+   , borderColor =  "#2d2d2d"
+   --, badColor =			"#f2777a"
+   --, goodColor =			"#99cc99"
+   --, mehColor =			"#ffcc66"
    , sepChar =  "%"   
    , alignSep = "}{"  
-   , template = "%battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ %StdinReader% || %volume% | %brightness% | %date% "
+   , template = " %date% | %battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% | %volume% | %brightness% }{ %StdinReader% "
    , lowerOnStart =     True    -- send to bottom of window stack on start
    , hideOnStart =      False   -- start with window unmapped (hidden)
    , allDesktops =      True    -- show on all desktops
    , overrideRedirect = True    -- set the Override Redirect flag (Xlib)
    , pickBroadest =     False   -- choose widest display (multi-monitor)
-   , persistent =       True    -- enable/disable hiding (True = disabled)
+   , persistent =       False    -- enable/disable hiding (True = disabled)
    , commands = 
-        -- volume monitor
-        [ Run Com            "sh" ["~/.xmonad/volume.sh"] "volume" 10
+        [ 
 
-        -- backlight brightness monitor
-
-        , Run Com            "sh" ["~/.xmonad/backlight.sh"] "brightness" 10
 
         -- network monitor 
-        , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+        	Run DynNetwork     [ "--template" , "<WiFi>" --"<dev>: <tx>kB/s|<rx>kB/s"
                              , "--Low"      , "1000"       -- units: kB/s
                              , "--High"     , "5000"       -- units: kB/s
                              , "--low"      , "darkgreen"

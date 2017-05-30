@@ -102,18 +102,6 @@ map <Leader>w :w<CR>
 map <Leader>e :e 
 map <Leader>q :bdelete<CR>
 
-"--buffer movement--
-"map <M>1 :buffer1
-"map <M>2 :buffer2
-"map <M-3> :buffer3
-"map <M-4> :buffer4
-"map <M-5> :buffer5
-"map <M-6> :buffer6
-"map <M-7> :buffer7
-"map <M-8> :buffer8
-"map <M-9> :buffer9
-"map <M-0> :buffer0
-
 map <Leader>k :bn<CR>
 map <Leader>j :bp<CR>
 
