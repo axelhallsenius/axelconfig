@@ -1,3 +1,16 @@
+"		###################################
+"		# Axel Hallsenius' .vimrc 				#
+"   # I've commented it best I could. #
+"   #																	#
+"   # You can reach me @:							#
+"   # axelhallsenius@gmail.com				#
+"   #																	#
+"   # Make it look and feel good!     #
+"		###################################
+
+
+
+" Required things
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -15,9 +28,6 @@ Plugin 'VundleVim/Vundle.vim'
 "Unimpaired - Bracket Pairing
 Plugin 'https://github.com/tpope/vim-unimpaired'
 
-"UlitSnips - Snipet thingie
-"Plugin 'https://github.com/SirVer/ultisnips.git'
-
 "Moar Colorschemes - flazz
 Plugin 'flazz/vim-colorschemes'
 
@@ -28,7 +38,7 @@ Plugin 'https://github.com/Valloric/YouCompleteMe'
 "vim-slim - Syntax highlighting
 Plugin 'slim-template/vim-slim.git'
 
-"Airline - fine stuff
+"Airline - Status bar with cool looking arrows
 Plugin 'https://github.com/vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -46,12 +56,6 @@ Plugin 'honza/vim-snippets'
 
 "Fugitive - Git integration
 Plugin 'https://github.com/tpope/vim-fugitive'
-
-"Vim Multiple Cursors - Sublime Text style multiple cursors
-"Plugin 'terryma/vim-multiple-cursors' 
-
-"Rainbow Parenthesis - pairs parens by color
-"Plugin 'kien/rainbow_parentheses.vim'
 
 "Dark Tango color scheme
 Plugin 'vim-scripts/darktango.vim'
@@ -125,21 +129,14 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 map  <Leader>g <Plug>(easymotion-bd-w)
 nmap <Leader>g <Plug>(easymotion-overwin-w)
 
-"sys clipboard yank and paste
-"
-"WIP
+"system clipboard yank and paste
 noremap <Leader>p "+p
 noremap <Leader>y "*y
 noremap <Leader>d "*d
 
-"make some nice mappings to copy and paste from the system clipboard
-"map <leader>y "*y
-"map <leader>p "*p
 
 "Makes space o do fuzzy file search
 nnoremap <Leader>o :CtrlP<CR>
-
-"----------- Plugin Sheisse ---------
 
 "-- UltiSnips --
 
@@ -160,27 +157,6 @@ let g:airline_symbols.space = "\ua0"
 let g:airline_powerline_fonts = 1
 set laststatus=2
 
-"unicode symbols
-"let g:airline_left_sep = '»'
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
-"let g:airline_right_sep = '◀'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.linenr = 'L'
-"let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.branch = 'L'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-"let g:airline_symbols.whitespace = 'Ξ'
-"powerline symbols
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-
-
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -198,10 +174,6 @@ if !has('gui_running')
 	endfun
 	map <Leader>x :call RangerExplorer()<CR>
 endif
-
-"--Rainbow Parenthesis - pairs parentheses color wise --
-"WIP
-"
 
 " -- color scheme --
 colorscheme gruvbox
