@@ -1,4 +1,5 @@
 -- TODO: change text colors
+-- TODO: make battery work properly
 -- TODO: || updating...
 Config { 
      font =         "xft:Inconsolata-dz\ for\ Powerline:style=Regular:size=10"
@@ -12,11 +13,11 @@ Config {
    --, mehColor =			"#ffcc66"
    , sepChar =  "%"   
    , alignSep = "}{"  
-   , template = " %date% | %battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% | %volume% | %brightness% }{ %StdinReader% "
+   , template = "  %StdinReader% }{ %dynnetwork%    %battery%    %multicpu%    %coretemp%     %memory%    %date%  "
    , lowerOnStart =     True    -- send to bottom of window stack on start
    , hideOnStart =      False   -- start with window unmapped (hidden)
    , allDesktops =      True    -- show on all desktops
-   , overrideRedirect = True    -- set the Override Redirect flag (Xlib)
+   , overrideRedirect = False    -- set the Override Redirect flag (Xlib)
    , pickBroadest =     False   -- choose widest display (multi-monitor)
    , persistent =       False    -- enable/disable hiding (True = disabled)
    , commands = 
@@ -24,48 +25,49 @@ Config {
 
 
         -- network monitor 
-        	Run DynNetwork     [ "--template" , "<WiFi>" --"<dev>: <tx>kB/s|<rx>kB/s"
+        	Run DynNetwork     [ "--template" , "Net: U<tx>|D<rx>" --kB/s
                              , "--Low"      , "1000"       -- units: kB/s
                              , "--High"     , "5000"       -- units: kB/s
-                             , "--low"      , "darkgreen"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkred"
+                             , "--low"      , "#99cc99"
+                             , "--normal"   , "#6699cc"
+                             , "--high"     , "#6699cc"
                              ] 10
 
         -- cpu activity monitor
-        , Run MultiCpu       [ "--template" , "Cpu: <total0>%|<total1>%"
+        , Run MultiCpu       [ "--template" , "Cpu: <total0>|<total1>"
                              , "--Low"      , "50"         -- units: %
                              , "--High"     , "85"         -- units: %
-                             , "--low"      , "darkgreen"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkred"
+                             , "--low"      , "#99cc99"
+                             , "--normal"   , "#ffcc66"
+                             , "--high"     , "#f2777a"
                              ] 10
 
         -- cpu core temperature monitor
-        , Run CoreTemp       [ "--template" , "Temp: <core0>°C|<core1>°C"
+        , Run CoreTemp       [ "--template" , "Temp: <core0>|<core1>"
                              , "--Low"      , "70"        -- units: °C
                              , "--High"     , "80"        -- units: °C
-                             , "--low"      , "darkgreen"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkred"
+                             , "--low"      , "#99cc99"
+                             , "--normal"   , "#ffcc66"
+                             , "--high"     , "#f2777a"
                              ] 50
-                          
+                         --°C 
         -- memory usage monitor
-        , Run Memory         [ "--template" ,"Mem: <usedratio>%"
+        , Run Memory         [ "--template" ,"Mem: <usedratio>"
                              , "--Low"      , "20"        -- units: %
                              , "--High"     , "80"        -- units: %
-                             , "--low"      , "darkgreen"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkred"
+                             , "--low"      , "#99cc99"
+                             , "--normal"   , "#ffcc66"
+                             , "--high"     , "#f2777a"
                              ] 10
 
         -- battery monitor
+				--, Run Battery		[
         , Run Battery        [ "--template" , "Batt: <acstatus>"
                              , "--Low"      , "15"        -- units: %
                              , "--High"     , "80"        -- units: %
-                             , "--low"      , "darkred"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkgreen"
+                             , "--low"      , "#f2777a"
+                             , "--normal"   , "#ffcc66"
+                             , "--high"     , "#99cc99"
 
                              , "--" -- battery specific options
                                        -- discharging status
@@ -73,7 +75,7 @@ Config {
                                        -- AC "on" status
                                        , "-O"	, "<fc=#dAA520>Charging</fc> <left>%"
                                        -- charged status
-                                       , "-i"	, "<fc=#006000>Charged</fc>"
+                                       , "-i"	, "<fc=#99cc99>Charged</fc>"
                              ] 50
         -- stdin reader
         , Run StdinReader
