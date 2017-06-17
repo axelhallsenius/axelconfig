@@ -37,6 +37,8 @@ Plugin 'https://github.com/Valloric/YouCompleteMe'
 "???
 "vim-slim - Syntax highlighting
 Plugin 'slim-template/vim-slim.git'
+"for rust:
+Plugin 'rust-lang/rust.vim'
 
 "Airline - Status bar with cool looking arrows
 Plugin 'https://github.com/vim-airline/vim-airline'
@@ -81,9 +83,16 @@ set shiftwidth=2
 
 "--------- Key Remaps --------
 
-"binds öö to return to normal mode 
-imap öö <Esc> <Esc>
-vmap öö <Esc> <Esc>
+"I run a swedish keyboard, and very rarely write the swedish special
+"characters in Vim. On a standard swedish QWERTY ö is on the home row. Waste of prime
+"real estate, if you ask me.
+
+"Anyway, disable these 3 commands if you're not a swedo:
+"binds ö to return to normal mode 
+imap ö <Esc> <Esc>
+vmap ö <Esc> <Esc>
+"binds Ctrl-o to ö
+imap <C-O> <C-K> ö
 
 "Maps J to make a new line
 map J o<Esc>
