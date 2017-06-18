@@ -1,11 +1,14 @@
 "		###################################
+"   #																	#
 "		# Axel Hallsenius' .vimrc 				#
-"   # I've commented it best I could. #
+"   #																	#
+"   # I've commented it a little bit. #
+"   #	However, it maybe slightly			#
+"   # lacking in that regard					#
 "   #																	#
 "   # You can reach me @:							#
 "   # axelhallsenius@gmail.com				#
 "   #																	#
-"   # Make it look and feel good!     #
 "		###################################
 
 
@@ -26,7 +29,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 "Unimpaired - Bracket Pairing
-Plugin 'https://github.com/tpope/vim-unimpaired'
+"Plugin 'https://github.com/tpope/vim-unimpaired'
+
+"delimitMate - bracket pairing
+Plugin 'Raimondi/delimitMate'
 
 "Moar Colorschemes - flazz
 Plugin 'flazz/vim-colorschemes'
@@ -193,4 +199,16 @@ let g:airline_theme = 'ubaryd'
 if has('gui_running')
 	set guioptions=
 	set guifont=Inconsolata-dz\ for\ Powerline\ 12
+	set mouse=c
 endif
+
+"Automatic () pairing
+let delimitMate_expand_cr = 1
+filetype indent plugin on
+
+"		###########################
+"		# That's all, folks				#
+"		#													#
+"		# Feel free to provide		#
+"		# feedback and criticism	#
+"		###########################
