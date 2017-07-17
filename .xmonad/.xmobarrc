@@ -81,6 +81,6 @@ Config {
         , Run StdinReader
 
         -- datetime indicator 
-        , Run Date           "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
+        , Run Date           "<fc=#99cc99>%a</fc> <fc=#6699cc>%F</fc> %T" "date" 10 --"<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
         ]
    }
