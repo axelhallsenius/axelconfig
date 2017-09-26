@@ -1,108 +1,93 @@
-"set nocompatible              " be iMproved, required
-"filetype off                  " required
-
-" NeoBundle Scripts-----------------------------
-if has('vim_starting')  
-  set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
-  set runtimepath+=~/.config/nvim/
+"dein Scripts-----------------------------
+if &compatible
+	set nocompatible               " Be iMproved
 endif
 
-let neobundle_readme=expand('~/.config/nvim/bundle/neobundle.vim/README.md')
+" Required:
+set runtimepath+=/home/haxxel/confrepos/axelconfig/.nvim/.//repos/github.com/Shougo/dein.vim
 
-if !filereadable(neobundle_readme)  
-  echo "Installing NeoBundle..."
-  echo ""
-  silent !mkdir -p ~/.config/nvim/bundle
-  silent !git clone https://github.com/Shougo/neobundle.vim ~/.config/nvim/bundle/neobundle.vim/
-  let g:not_finsh_neobundle = "yes"
+" Required:
+if dein#load_state('/home/haxxel/confrepos/axelconfig/.nvim/./')
+	call dein#begin('/home/haxxel/confrepos/axelconfig/.nvim/./')
+
+	" Let dein manage dein
+	" Required:
+	call dein#add('/home/haxxel/confrepos/axelconfig/.nvim/.//repos/github.com/Shougo/dein.vim')
+
+	" Add or remove your plugins here:
+	call dein#add('Shougo/neosnippet.vim')
+	call dein#add('Shougo/neosnippet-snippets')
+	"delimitMate - bracket pairing
+	call dein#add( 'Raimondi/delimitMate')
+
+	"Moar Colorschemes - flazz
+	call dein#add( 'flazz/vim-colorschemes')
+
+	"YouCompleteMe - Nice fuzzy autocompleter 
+	call dein#add( 'https://github.com/Valloric/YouCompleteMe')
+
+	"???
+	"vim-slim - Syntax highlighting
+	call dein#add( 'slim-template/vim-slim.git')
+	"for rust:
+	call dein#add( 'rust-lang/rust.vim')
+
+	"Airline - Status bar with cool looking arrows
+	call dein#add( 'https://github.com/vim-airline/vim-airline')
+	call dein#add( 'vim-airline/vim-airline-themes')
+
+	"EasyMotion - smooth movement by searching for single chars
+	call dein#add( 'https://github.com/easymotion/vim-easymotion')
+
+	"Noctu - color scheme stuff
+	call dein#add( 'noahfrederick/vim-noctu')
+
+	"Track the engine.
+	call dein#add( 'SirVer/ultisnips')
+
+	" Snippets are separated from the engine. Add this if you want them:
+	call dein#add( 'honza/vim-snippets')
+
+	"Fugitive - Git integration
+	call dein#add( 'https://github.com/tpope/vim-fugitive')
+
+	"Dark Tango color scheme
+	call dein#add( 'vim-scripts/darktango.vim')
+
+	"Ctrl P - Fuzzy file search
+	call dein#add( 'https://github.com/kien/ctrlp.vim.git')
+
+	" You can specify revision/branch/tag.
+	call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+	" Required:
+	call dein#end()
+	call dein#save_state()
 endif
 
-call neobundle#begin(expand('$HOME/.config/nvim/bundle'))  
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" ------------------------------------
-" Plugins Ahoy!
-" ------------------------------------
-
-"Unimpaired - Bracket Pairing
-NeoBundle 'https://github.com/tpope/vim-unimpaired'
-
-"UlitSnips - Snipet thingie
-"NeoBundle 'https://github.com/SirVer/ultisnips.git'
-
-"Moar Colorschemes - flazz
-NeoBundle 'flazz/vim-colorschemes'
-
-"YouCompleteMe - Nice fuzzy autocompleter 
-NeoBundle 'Valloric/YouCompleteMe', {  
-     \ 'build'      : {
-        \ 'mac'     : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-        \ 'unix'    : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-        \ 'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-        \ 'cygwin'  : './install.sh --clang-completer --system-libclang --omnisharp-completer'
-        \ }
-     \ }
-
-"???
-"vim-slim - Syntax highlighting
-NeoBundle 'slim-template/vim-slim.git'
-
-"Airline - fine stuff
-NeoBundle 'https://github.com/vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-
-"EasyMotion - smooth movement by searching for single chars
-NeoBundle 'https://github.com/easymotion/vim-easymotion'
-
-"Noctu - color scheme stuff
-NeoBundle 'noahfrederick/vim-noctu'
-
-"Track the engine.
-NeoBundle 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
-NeoBundle 'honza/vim-snippets'
-
-"Fugitive - Git integration
-NeoBundle 'https://github.com/tpope/vim-fugitive'
-
-"Vim Multiple Cursors - Sublime Text style multiple cursors
-"NeoBundle 'terryma/vim-multiple-cursors' 
-
-"Rainbow Parenthesis - pairs parens by color
-"NeoBundle 'kien/rainbow_parentheses.vim'
-
-"Dark Tango color scheme
-NeoBundle 'vim-scripts/darktango.vim'
-
-"Ctrl P - Fuzzy file search
-NeoBundle 'https://github.com/kien/ctrlp.vim.git'
-
-call neobundle#end()  
+" Required:
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck  
-"End NeoBundle Scripts-------------------------
-
-"-------- Syntax Stuff ------
-
-"Enable syntax highlighting
 syntax enable
 
-"Enables line numbers on the left
-set number
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
 
-"makes tabspace 2 spaces
-set tabstop=2
-set shiftwidth=2
+"End dein Scripts-------------------------
 
 "--------- Key Remaps --------
 
-"binds öö to return to normal mode 
-imap öö <Esc> <Esc>
-vmap öö <Esc> <Esc>
+"I run a swedish keyboard, and very rarely write the swedish special
+"characters in Vim. On a standard swedish QWERTY ö is on the home row. Waste of prime
+"real estate, if you ask me.
+
+"Anyway, disable these 3 commands if you're not a swedo:
+"binds ö to return to normal mode 
+imap ö <Esc> <Esc>
+vmap ö <Esc> <Esc>
+"binds Ctrl-o to ö
+imap <C-O> <C-K> ö
 
 "Maps J to make a new line
 map J o<Esc>
@@ -124,18 +109,6 @@ map <Leader>l <C-W>l
 map <Leader>w :w<CR>
 map <Leader>e :e 
 map <Leader>q :bdelete<CR>
-
-"--buffer movement--
-"map <M>1 :buffer1
-"map <M>2 :buffer2
-"map <M-3> :buffer3
-"map <M-4> :buffer4
-"map <M-5> :buffer5
-"map <M-6> :buffer6
-"map <M-7> :buffer7
-"map <M-8> :buffer8
-"map <M-9> :buffer9
-"map <M-0> :buffer0
 
 map <Leader>k :bn<CR>
 map <Leader>j :bp<CR>
@@ -160,21 +133,14 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 map  <Leader>g <Plug>(easymotion-bd-w)
 nmap <Leader>g <Plug>(easymotion-overwin-w)
 
-"sys clipboard yank and paste
-"
-"WIP
+"system clipboard yank and paste
 noremap <Leader>p "+p
 noremap <Leader>y "*y
 noremap <Leader>d "*d
 
-"make some nice mappings to copy and paste from the system clipboard
-"map <leader>y "*y
-"map <leader>p "*p
 
 "Makes space o do fuzzy file search
 nnoremap <Leader>o :CtrlP<CR>
-
-"----------- Plugin Sheisse ---------
 
 "-- UltiSnips --
 
@@ -195,34 +161,13 @@ let g:airline_symbols.space = "\ua0"
 let g:airline_powerline_fonts = 1
 set laststatus=2
 
-"unicode symbols
-"let g:airline_left_sep = '»'
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
-"let g:airline_right_sep = '◀'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.linenr = 'L'
-"let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.branch = 'L'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-"let g:airline_symbols.whitespace = 'Ξ'
-"powerline symbols
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-
-
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 set noshowmode
 
 "--Ranger File Manager - integration
-if !has('gui_running')
+"if !has('gui_running')
 	function RangerExplorer()
 		exec "silent !ranger --choosefile=/tmp/vim_ranger_current_file " . expand("%:p:h")
 		if filereadable('/tmp/vim_ranger_current_file')
@@ -232,11 +177,7 @@ if !has('gui_running')
 		redraw!
 	endfun
 	map <Leader>x :call RangerExplorer()<CR>
-endif
-
-"--Rainbow Parenthesis - pairs parentheses color wise --
-"WIP
-"
+"endif
 
 " -- color scheme --
 colorscheme gruvbox
@@ -244,8 +185,19 @@ let g:airline_theme = 'ubaryd'
 " -- 
 
 "Gvim specific:
-if has('gui_running')
-	set guioptions=
-	set guifont=Inconsolata-dz\ for\ Powerline\ 12
-endif
+"if has('gui_running')
+"	set guioptions=
+"	set guifont=Inconsolata-dz\ for\ Powerline\ 12
+"	set mouse=c
+"endif
 
+"Automatic () pairing
+let delimitMate_expand_cr = 1
+filetype indent plugin on
+
+"		###########################
+"		# That's all, folks				#
+"		#													#
+"		# Feel free to provide		#
+"		# feedback and criticism	#
+"		###########################

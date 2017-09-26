@@ -28,7 +28,7 @@ feh --bg-scale ~/Pictures/bg/1495326854388.png &
 #   sleep 3
 #   gnome-power-manager &
 #fi
-trayer --edge top --align center --SetDockType true --SetPartialStrut true --expand true --widthtype request --transparent true --alpha 0 --tint 0x2d2d2d --height 16 &
+#trayer --edge top --align center --SetDockType true --SetPartialStrut true --expand true --widthtype request --transparent true --alpha 0 --tint 0x2d2d2d --height 16 &
  
 exec xmonad
 

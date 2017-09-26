@@ -29,7 +29,7 @@ main = do
 -}
 
 main = do
-  xmonad =<< statusBar "xmobar" myPP toggleStrutsKey defaultConfig
+  xmonad =<< statusBar "xmobar" myPP toggleStrutsKey defaultConfig --additionalKeys
     { terminal           = "urxvt"
     , focusFollowsMouse  = True
     , clickJustFocuses   = False
@@ -40,7 +40,10 @@ main = do
     , focusedBorderColor = "#00dd00"
     , manageHook         = mymanager
     --, startupHook        = setWMName "LG3D"
-    }
+    } {- 'additionalKeys' [((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
+	, ((modMask, xK_f), spawn "chromium-browser")
+	, ((modMask, xK_d), spawn dmenu)
+		] -}
 
 myPP = xmobarPP { ppOutput          = putStrLn
                 , ppCurrent         = xmobarColor "#6699cc" ""  . wrap "➤" ""
@@ -57,3 +60,4 @@ mymanager = composeAll
   [ className =? "gimp" --> doFloat
   , className =? "vlc"  --> doFloat
   ]
+
