@@ -1,8 +1,9 @@
 !Font
-URxvt*font:            	xft:Inconsolata-dz \for \Powerline:size=11
+URxvt*font:            	xft:Inconsolata-dz for Powerline:size=14
 
 !Defaults
-URxvt*urlLauncher: 			chromium-browser
+!URxvt*urlLauncher: 			chromium-browser
+URxvt*urlLauncher: 			firefox
 
 !GUI settings
 URxvt*scrollBar:        false

@@ -194,6 +194,7 @@ endif
 colorscheme gruvbox
 let g:airline_theme = 'ubaryd'
 " -- 
+set guifont=Inconsolata-dz\ for\ Powerline\ 14
 
 "Gvim specific:
 if has('gui_running')
