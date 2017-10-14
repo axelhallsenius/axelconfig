@@ -2,7 +2,7 @@
 -- TODO: make battery work properly
 -- TODO: || updating...
 Config { 
-     font =         "xft:Inconsolata-dz\ for\ Powerline:style=Regular:size=10"
+     font =         "xft:Inconsolata:style=Regular:size=10"
    , bgColor =      "#2d2d2d"
    , fgColor =      "#d3d0c8"
    , position =     Top
