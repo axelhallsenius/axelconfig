@@ -40,10 +40,14 @@ main = do
     , focusedBorderColor = "#00dd00"
     , manageHook         = mymanager
     --, startupHook        = setWMName "LG3D"
-    } {- 'additionalKeys' [((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
-	, ((modMask, xK_f), spawn "chromium-browser")
+    }  
+{-}
+additionalKeys [((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
+	, ((modMask, xK_f), spawn "firefox")
 	, ((modMask, xK_d), spawn dmenu)
-		] -}
+		] 
+-}
+
 
 myPP = xmobarPP { ppOutput          = putStrLn
                 , ppCurrent         = xmobarColor "#6699cc" ""  . wrap "➤" ""

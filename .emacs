@@ -1,3 +1,8 @@
+; Welcome to Axels horrible .emacs! It looks neat, but ycmd isn't quite working for me yet, I'm afraid. If you have questions, contact me at my gmail
+					; axelhallsenius@gmail.com
+;Have fun confing
+
+
 (require 'package)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
@@ -74,14 +79,15 @@
 	"w" 'save-buffer
 	"<SPC>" 'smex
 
-	;"h" move to viewport left
-	;"j" cycle buffer right
-	;"k" cycle buffer right
-	;"l" viewport right
+	"k" 'windmove-up
+	"j" 'windmove-down
+	"h" 'windmove-left
+	"l" 'windmove-right
 
-	"x" 'execute-extended-command
+
+	;"x" 'execute-extended-command
 	;opens up ranger file explorer
-	"e" 'ranger)
+	"x" 'ranger)
 
 ;misc button mappings
 
@@ -104,16 +110,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (define-key minibuffer-local-must-match-map "ö" 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-isearch-map "ö" 'minibuffer-keyboard-quit)
 
-(global-set-key (kbd "C-k") 'windmove-up)
-(global-set-key (kbd "C-j") 'windmove-down)
-(global-set-key (kbd "C-h") 'windmove-left)
-(global-set-key (kbd "C-l") 'windmove-right)
 
 ;;Cycle buffer mappings
-(define-key evil-normal-state-map (kbd "C-<tab>") 'evil-next-buffer)
-(define-key evil-normal-state-map (kbd "C-<backtab>") 'evil-prev-buffer)
-;(define-key evil-normal-state-map (kbd "S-k") 'evil-next-buffer)
-;(define-key evil-normal-state-map (kbd "S-j") 'evil-prev-buffer)
+;(define-key evil-normal-state-map (kbd "C-<tab>") 'evil-next-buffer)
+;(define-key evil-normal-state-map (kbd "C-<backtab>") 'evil-prev-buffer)
+(define-key evil-normal-state-map (kbd "M-k") 'evil-next-buffer)
+(define-key evil-normal-state-map (kbd "M-j") 'evil-prev-buffer)
 
 (unless window-system
   (add-hook 'linum-before-numbering-hook
@@ -135,7 +137,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (with-eval-after-load 'evil-maps
     (define-key evil-insert-state-map (kbd "ö") 'evil-normal-state))
 
-(define-key evil-normal-state-map (kbd "ä") 'ace-jump-mode)
+(define-key evil-normal-state-map (kbd "ä") 'ace-jump-char-mode)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -161,11 +163,31 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;(require 'projectile)
 ;(pr
 
-(require 'ycmd)
-(add-hook 'after-init-hook #'global-ycmd-mode)
+;(require 'ycmd)
+;(add-hook 'after-init-hook #'global-ycmd-mode)
 
-(set-variable 'ycmd-server-command '("python" "~/confrepos/ymcd/"))
+;(set-variable 'ycmd-server-command '("python" "~/confrepos/ymcd/"))
 ;GLobal ycmd conf:(set-variable 'ycmd-global-config "~//to/global_config.py")
-(require 'company-ycmd)
+;(require 'company-ycmd)
 ;(add-hook 'after-init-hook 'global-company-mode)
-(company-ycmd-setup)
+;(company-ycmd-setup)
+
+(add-to-list 'load-path "~/.emacs.d/plugins/evil-org-mode")
+(require 'evil-org)
+
+(add-to-list 'load-path "~/.emacs.d/plugins/edit-indirect")
+
+(define-key evil-insert-state-map (kbd "M-e") 'edit-indirect)
+;setting C- swedo chars to act as normal swedo chars
+;(define-key evil-insert-state-map (kbd "C-ö") (insert-char 00F6))
+;(define-key evil-insert-state-map (kbd "C-ä") (insert-char 00F6))
+
+;resize buffers
+;(define-key evil-normal-state-map (kbd "C-M-j") 'enlarge-window)
+;(define-key evil-normal-state-map (kbd "C-M-k") 'shrink-window)
+;(define-key evil-normal-state-map (kbd "C-M-h") 'enlarge-window-horizontally)
+;(define-key evil-normal-state-map (kbd "C-M-l") 'shrink-window-horizontally)
+
+;(add-hook 'text-mode 'visual-line-mode)
+;(add-hook 'text-mode 'window-margin-mode)
+;(add-hook 'text-mode window-margin-width 80)

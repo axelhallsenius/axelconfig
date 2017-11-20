@@ -1,13 +1,23 @@
+"########################################
+"		   #													#
+"  		 #													#
 "		###################################
 "   #																	#
 "		# Axel Hallsenius' .vimrc 				#
 "   #																	#
+"   #	I use vim for all kinds of			#
+"   #	programming, and occationally		#
+"   # some fiction. That's where 	    #
+"   #	prose mode comes in.  					#
+"   #																	#
 "   # I've commented it a little bit. #
-"   #	However, it maybe slightly			#
-"   # lacking in that regard					#
+"   #	However, it maybe a bit of a		#
+"   #	mess.														#
 "   #																	#
 "   # You can reach me @:							#
 "   # axelhallsenius@gmail.com				#
+"   #	or															#
+"   #	your friendly local foobar			#
 "   #																	#
 "		###################################
 
@@ -71,6 +81,16 @@ Plugin 'vim-scripts/darktango.vim'
 "Ctrl P - Fuzzy file search
 Plugin 'https://github.com/kien/ctrlp.vim.git'
 
+"Things for prose mode - took it from a blog, forgot which.
+	"Goyo - focused prose mode
+	Plugin 'junegunn/goyo.vim'
+
+	"Limelight - focuses on paragraph
+	Plugin 'junegunn/limelight.vim'
+	
+	"vimPencil - prose style word wrap etc
+	Plugin 'reedes/vim-pencil'
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -101,7 +121,7 @@ vmap ö <Esc> <Esc>
 imap <C-O> <C-K> ö
 
 "Maps J to make a new line
-map J o<Esc>
+"map J o<Esc>
 
 "maps space to be the Leader command.
 map <Space> <Leader>
@@ -121,6 +141,7 @@ map <Leader>w :w<CR>
 map <Leader>e :e 
 map <Leader>q :bdelete<CR>
 
+"Cycle buffers
 map <Leader>k :bn<CR>
 map <Leader>j :bp<CR>
 
@@ -130,8 +151,8 @@ map <Leader>r :substitute
 "-- EasyMotion --
 
 "easymove to 1 char
-map  s <Plug>(easymotion-bd-f)
-nmap s <Plug>(easymotion-overwin-f)
+map  ä <Plug>(easymotion-bd-f)
+nmap ä <Plug>(easymotion-overwin-f)
 
 "easymove to 1 2 chars
 nmap <Leader>f <Plug>(easymotion-overwin-f2)
@@ -194,7 +215,7 @@ endif
 colorscheme gruvbox
 let g:airline_theme = 'ubaryd'
 " -- 
-set guifont=Inconsolata-dz\ for\ Powerline\ 14
+"set guifont=Inconsolata-dz\ for\ Powerline\ 14
 
 "Gvim specific:
 if has('gui_running')
@@ -207,9 +228,20 @@ endif
 let delimitMate_expand_cr = 1
 filetype indent plugin on
 
+"Enter prose mode
+map <F11> :Goyo <bar> :Limelight!! <bar> :TogglePencil <CR>
+
 "		###########################
+"		#													#
 "		# That's all, folks				#
 "		#													#
 "		# Feel free to provide		#
-"		# feedback and criticism	#
+"		# feedback, criticism			#
+"		#	or ask me questions			#
+"		#													#
+"		#	though in the case of		#
+"		#	powerline fonts, I'm		#
+"		#	afraid you're on 				#
+"		#	your own, friendo				#
+"		#													#
 "		###########################
