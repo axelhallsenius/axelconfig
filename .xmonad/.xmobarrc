@@ -2,7 +2,7 @@
 -- TODO: make battery work properly
 -- TODO: trayer with nm-applet
 Config { 
-     font =         "xft:Inconsolata-dz\ for\ Powerline:style=Regular:size=11"
+     font =         "xft:DejaVu Sans Mono for Powerline:style=Light:size=10"
    , bgColor =      "#2d2d2d"
    , fgColor =      "#d3d0c8"
    , position =     Top

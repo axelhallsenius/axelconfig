@@ -44,8 +44,27 @@ Plugin 'VundleVim/Vundle.vim'
 "delimitMate - bracket pairing
 Plugin 'Raimondi/delimitMate'
 
-"Moar Colorschemes - flazz
-Plugin 'flazz/vim-colorschemes'
+"Colorschemes
+	"Moar Colorschemes - flazz
+	Plugin 'flazz/vim-colorschemes'
+
+	"Synthwave Colorscheme
+	Plugin 'exitface/synthwave.vim'
+
+	"Vim-code-dark colorscheme
+	Plugin 'tomasiser/vim-code-dark'
+
+	"Vimspectr - color scheme sythesis
+	Plugin 'nightsense/vimspectr'
+	
+	"Noctu - color scheme stuff
+	Plugin 'noahfrederick/vim-noctu'
+
+	"Dark Tango color scheme
+	Plugin 'vim-scripts/darktango.vim'
+	
+	"Office
+	Plugin 'nightsense/office'
 
 "YouCompleteMe - Nice fuzzy autocompleter 
 Plugin 'https://github.com/Valloric/YouCompleteMe'
@@ -63,20 +82,13 @@ Plugin 'vim-airline/vim-airline-themes'
 "EasyMotion - smooth movement by searching for single chars
 Plugin 'https://github.com/easymotion/vim-easymotion'
 
-"Noctu - color scheme stuff
-Plugin 'noahfrederick/vim-noctu'
-
-"Track the engine.
+"Ultisnips engine - snippet thingie
 Plugin 'SirVer/ultisnips'
-
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
 "Fugitive - Git integration
 Plugin 'https://github.com/tpope/vim-fugitive'
-
-"Dark Tango color scheme
-Plugin 'vim-scripts/darktango.vim'
 
 "Ctrl P - Fuzzy file search
 Plugin 'https://github.com/kien/ctrlp.vim.git'
@@ -90,6 +102,9 @@ Plugin 'https://github.com/kien/ctrlp.vim.git'
 	
 	"vimPencil - prose style word wrap etc
 	Plugin 'reedes/vim-pencil'
+
+"folding in .md org-mode style
+Plugin 'nelstrom/vim-markdown-folding'
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -118,8 +133,9 @@ set shiftwidth=2
 imap ö <Esc> <Esc>
 vmap ö <Esc> <Esc>
 "binds Ctrl-o to ö
-imap <C-O> <C-K> ö
+imap <C-o> <C-K> ö
 
+imap <F10> <C-K> Ö
 "Maps J to make a new line
 "map J o<Esc>
 
@@ -132,8 +148,8 @@ map L E
 
 "switch active buffer between those on screen using space and directionals
 map <Leader>h <C-W>h
-map <Leader>j <C-W>j
-map <Leader>k <C-W>k
+map <Leader>u <C-W>j
+map <Leader>n <C-W>k
 map <Leader>l <C-W>l
 
 "quick commands for write and splitting screen
@@ -155,7 +171,7 @@ map  ä <Plug>(easymotion-bd-f)
 nmap ä <Plug>(easymotion-overwin-f)
 
 "easymove to 1 2 chars
-nmap <Leader>f <Plug>(easymotion-overwin-f2)
+"nmap <Leader>f <Plug>(easymotion-overwin-f2)
 
 "Easymove to line
 map <Leader>L <Plug>(easymotion-bd-jk)
@@ -188,7 +204,7 @@ let g:UltiSnipsEditSplit="vertical"
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
-let g:airline_symbols.space = "\ua0"
+"let g:airline_symbols.space = \ua0"
 
 let g:airline_powerline_fonts = 1
 set laststatus=2
@@ -212,24 +228,39 @@ if !has('gui_running')
 endif
 
 " -- color scheme --
+
+set t_Co=256 
+"set t_ut=
 colorscheme gruvbox
-let g:airline_theme = 'ubaryd'
+let g:airline_theme = 'codedark'
+"let g:office_dark_LineNr = 'off'
+"let g:office_dark_CursorLineNr = 'off'
+
 " -- 
-"set guifont=Inconsolata-dz\ for\ Powerline\ 14
+"set guifont=Hack-Regular:12
 
 "Gvim specific:
-if has('gui_running')
-	set guioptions=
-	set guifont=Inconsolata-dz\ for\ Powerline\ 12
-	set mouse=c
-endif
+"if has('gui_running')
+"	set guioptions=
+"	set guifont=Inconsolata-dz\ for\ Powerline\ 12
+"	set mouse=c
+"endif
 
 "Automatic () pairing
 let delimitMate_expand_cr = 1
 filetype indent plugin on
 
+"Sets shading for non focused paragraphs in prose mode
+let g:limelight_conceal_ctermfg = 241
+
 "Enter prose mode
 map <F11> :Goyo <bar> :Limelight!! <bar> :TogglePencil <CR>
+
+"folding for markdown
+set nocompatible
+if has("autocmd")
+	filetype plugin indent on
+endif
 
 "		###########################
 "		#													#
