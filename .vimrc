@@ -1,25 +1,25 @@
 "########################################
-"		   #													#
-"  		 #													#
-"		###################################
-"   #																	#
-"		# Axel Hallsenius' .vimrc 				#
-"   #																	#
-"   #	I use vim for all kinds of			#
-"   #	programming, and occationally		#
-"   # some fiction. That's where 	    #
-"   #	prose mode comes in.  					#
-"   #																	#
+"       #                          #
+"       #                          #
+"   ###################################
+"   #                                 #
+"   # Axel Hallsenius' .vimrc         #
+"   #                                 #
+"   #  I use vim for all kinds of     #
+"   #  programming, and occationally  #
+"   # some fiction. That's where      #
+"   #  prose mode comes in.           #
+"   #                                 #
 "   # I've commented it a little bit. #
-"   #	However, it maybe a bit of a		#
-"   #	mess.														#
-"   #																	#
-"   # You can reach me @:							#
-"   # axelhallsenius@gmail.com				#
-"   #	or															#
-"   #	your friendly local foobar			#
-"   #																	#
-"		###################################
+"   #  However, it maybe a bit of a   #
+"   #  mess.                          #
+"   #                                 #
+"   # You can reach me @:             #
+"   # axelhallsenius@gmail.com        #
+"   #  or                             #
+"   #  your friendly local foobar     #
+"   #                                 #
+"   ###################################
 
 
 
@@ -262,17 +262,17 @@ if has("autocmd")
 	filetype plugin indent on
 endif
 
-"		###########################
-"		#													#
-"		# That's all, folks				#
-"		#													#
-"		# Feel free to provide		#
-"		# feedback, criticism			#
-"		#	or ask me questions			#
-"		#													#
-"		#	though in the case of		#
-"		#	powerline fonts, I'm		#
-"		#	afraid you're on 				#
-"		#	your own, friendo				#
-"		#													#
-"		###########################
+"    ###########################
+"    #                         #
+"    # That's all, folks       #
+"    #                         #
+"    # Feel free to provide    #
+"    # feedback, criticism     #
+"    #  or ask me questions    #
+"    #                         #
+"    #  though in the case of  #
+"    #  powerline fonts, I'm   #
+"    #  afraid you're on       #
+"    #  your own, friendo      #
+"    #                         #
+"    ###########################
