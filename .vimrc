@@ -106,6 +106,9 @@ Plugin 'https://github.com/kien/ctrlp.vim.git'
 "folding in .md org-mode style
 Plugin 'nelstrom/vim-markdown-folding'
 
+"Syntastic - inline syntax checking
+Plugin 'vim-syntastic/syntastic'
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -228,23 +231,11 @@ if !has('gui_running')
 endif
 
 " -- color scheme --
-
 set t_Co=256 
 "set t_ut=
 colorscheme gruvbox
 let g:airline_theme = 'codedark'
-"let g:office_dark_LineNr = 'off'
-"let g:office_dark_CursorLineNr = 'off'
 
-" -- 
-"set guifont=Hack-Regular:12
-
-"Gvim specific:
-"if has('gui_running')
-"	set guioptions=
-"	set guifont=Inconsolata-dz\ for\ Powerline\ 12
-"	set mouse=c
-"endif
 
 "Automatic () pairing
 let delimitMate_expand_cr = 1
@@ -261,6 +252,18 @@ set nocompatible
 if has("autocmd")
 	filetype plugin indent on
 endif
+
+"Syntastic - still to fix
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+map <Leader>c :SyntasticCheck<CR>
 
 "    ###########################
 "    #                         #

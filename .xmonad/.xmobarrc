@@ -25,44 +25,44 @@ Config {
 
 
         -- network monitor 
-        	Run DynNetwork     [ "--template" , "Net: U<tx>|D<rx>" --kB/s
+        	Run DynNetwork     [ "--template" , "☂ ▲ <tx> ▼ <rx>" --kB/s
                              , "--Low"      , "1000"       -- units: kB/s
                              , "--High"     , "5000"       -- units: kB/s
-                             , "--low"      , "#99cc99"
-                             , "--normal"   , "#6699cc"
+                             , "--low"      , "#d3d0c8"
+                             , "--normal"   , "#99cc99"
                              , "--high"     , "#6699cc"
                              ] 10
 
         -- cpu activity monitor
-        , Run MultiCpu       [ "--template" , "Cpu: <total0>|<total1>"
+        , Run MultiCpu       [ "--template" , "◪ <total0> ◩ <total1>"
                              , "--Low"      , "50"         -- units: %
                              , "--High"     , "85"         -- units: %
-                             , "--low"      , "#99cc99"
+                             , "--low"      , "#6699cc"
                              , "--normal"   , "#ffcc66"
                              , "--high"     , "#f2777a"
                              ] 10
 
         -- cpu core temperature monitor
-        , Run CoreTemp       [ "--template" , "Temp: <core0>|<core1>"
+        , Run CoreTemp       [ "--template" , "♨ <core0> ♨ <core1>"
                              , "--Low"      , "70"        -- units: °C
                              , "--High"     , "80"        -- units: °C
-                             , "--low"      , "#99cc99"
+                             , "--low"      , "#6699cc"
                              , "--normal"   , "#ffcc66"
                              , "--high"     , "#f2777a"
                              ] 50
                          --°C 
         -- memory usage monitor
-        , Run Memory         [ "--template" ,"Mem: <usedratio>"
+        , Run Memory         [ "--template" ,"✇ <usedratio>"
                              , "--Low"      , "20"        -- units: %
                              , "--High"     , "80"        -- units: %
-                             , "--low"      , "#99cc99"
+                             , "--low"      , "#6699cc"
                              , "--normal"   , "#ffcc66"
                              , "--high"     , "#f2777a"
                              ] 10
 
         -- battery monitor
 				--, Run Battery		[
-        , Run Battery        [ "--template" , "Batt: <acstatus>"
+        , Run Battery        [ "--template" , "<fc=#dAA520>⚡</fc> <acstatus>"
                              , "--Low"      , "15"        -- units: %
                              , "--High"     , "80"        -- units: %
                              , "--low"      , "#f2777a"
@@ -71,11 +71,11 @@ Config {
 
                              , "--" -- battery specific options
                                        -- discharging status
-                                       , "-o"	, "<left>% (<timeleft>)"
+                                       , "-o"	, "▼ <left> ▷ <timeleft>"
                                        -- AC "on" status
-                                       , "-O"	, "<fc=#dAA520>Charging</fc> <left>%"
+                                       , "-O"	, "▲ <left>"
                                        -- charged status
-                                       , "-i"	, "<fc=#99cc99>Charged</fc>"
+                                       , "-i"	, "<fc=#99cc99>●</fc>"
                              ] 50
         -- stdin reader
         , Run StdinReader
