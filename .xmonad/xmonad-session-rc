@@ -15,7 +15,7 @@ xrdb -merge .Xresources
  
 # Fire up apps
  
-feh --bg-scale ~/Pictures/bg/1495326854388.png &
+feh --bg-scale ~/Pictures/bg/1496390939106.png:large.jpeg &
 
 #xscreensaver -no-splash &
 

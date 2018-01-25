@@ -109,6 +109,9 @@ Plugin 'nelstrom/vim-markdown-folding'
 "Syntastic - inline syntax checking
 Plugin 'vim-syntastic/syntastic'
 
+"haskell-vim - syntax highlighting for haskell
+Plugin 'neovimhaskell/haskell-vim'
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -124,6 +127,9 @@ set number
 "makes tabspace 2 spaces
 set tabstop=2
 set shiftwidth=2
+
+set formatprg=stylish-haskell
+
 
 "--------- Key Remaps --------
 
