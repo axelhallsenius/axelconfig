@@ -1,5 +1,5 @@
 !Font
-URxvt*font:            	xft:DejaVu Sans Mono for Powerline:size=12
+URxvt*font:            	xft:DejaVu Sans Mono for Powerline:style=Light:size=12
 
 !Defaults
 !URxvt*urlLauncher: 			chromium-browser

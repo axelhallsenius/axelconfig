@@ -5,7 +5,7 @@
 "   #                                 #
 "   # Axel Hallsenius' .vimrc         #
 "   #                                 #
-"   #  I use vim for all kinds of     #
+"   # I use vim for all kinds of      #
 "   #  programming, and occationally  #
 "   # some fiction. That's where      #
 "   #  prose mode comes in.           #
@@ -15,9 +15,12 @@
 "   #  mess.                          #
 "   #                                 #
 "   # You can reach me @:             #
-"   # axelhallsenius@gmail.com        #
+"   #  axelhallsenius@gmail.com       #
 "   #  or                             #
 "   #  your friendly local foobar     #
+"   #  or just                        #
+"   #  show up at my door uninvited   #
+"   #  (i may have some tea around)   #
 "   #                                 #
 "   ###################################
 
@@ -56,13 +59,16 @@ Plugin 'Raimondi/delimitMate'
 
 	"Vimspectr - color scheme sythesis
 	Plugin 'nightsense/vimspectr'
-	
+
 	"Noctu - color scheme stuff
 	Plugin 'noahfrederick/vim-noctu'
 
 	"Dark Tango color scheme
 	Plugin 'vim-scripts/darktango.vim'
-	
+
+	"simplyfysimplify-dark
+	Plugin 'nightsense/simplifysimplify'
+
 	"Office
 	Plugin 'nightsense/office'
 
@@ -119,7 +125,7 @@ filetype plugin indent on    " required
 "-------- Syntax Stuff ------
 
 "Enable syntax highlighting
-syntax enable
+syntax on
 
 "Enables line numbers on the left
 set number
@@ -142,7 +148,7 @@ set formatprg=stylish-haskell
 imap ö <Esc> <Esc>
 vmap ö <Esc> <Esc>
 "binds Ctrl-o to ö
-imap <C-o> <C-K> ö
+imap <F9> <C-K> ö
 
 imap <F10> <C-K> Ö
 "Maps J to make a new line
@@ -211,7 +217,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 "--Airline--
 if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
+let g:airline_symbols = {}
 endif
 "let g:airline_symbols.space = \ua0"
 
@@ -225,21 +231,27 @@ set noshowmode
 
 "--Ranger File Manager - integration
 if !has('gui_running')
-	function RangerExplorer()
-		exec "silent !ranger --choosefile=/tmp/vim_ranger_current_file " . expand("%:p:h")
-		if filereadable('/tmp/vim_ranger_current_file')
-			exec 'edit ' . system('cat /tmp/vim_ranger_current_file')
-			call system('rm /tmp/vim_ranger_current_file')
-		endif
-		redraw!
-	endfun
-	map <Leader>x :call RangerExplorer()<CR>
+function RangerExplorer()
+	exec "silent !ranger --choosefile=/tmp/vim_ranger_current_file " . expand("%:p:h")
+	if filereadable('/tmp/vim_ranger_current_file')
+		exec 'edit ' . system('cat /tmp/vim_ranger_current_file')
+		call system('rm /tmp/vim_ranger_current_file')
+	endif
+	redraw!
+endfun
+map <Leader>x :call RangerExplorer()<CR>
 endif
 
 " -- color scheme --
 set t_Co=256 
 "set t_ut=
-colorscheme gruvbox
+"highlight clear LineNr
+"highlight clear SignColumn
+colorscheme simplifysimplify-dark
+let g:simplifysimplify_dark_LineNr = 'off'
+let g:simplifysimplify_dark_CursorLineNr = 'off'
+let g:simplifysimplify_light_LineNr = 'off'
+let g:simplifysimplify_light_CursorLineNr = 'off'
 let g:airline_theme = 'codedark'
 
 
@@ -251,7 +263,13 @@ filetype indent plugin on
 let g:limelight_conceal_ctermfg = 241
 
 "Enter prose mode
-map <F11> :Goyo <bar> :Limelight!! <bar> :TogglePencil <CR>
+function! ProseMode()
+		:Goyo
+		:Limelight!!
+		:TogglePencil
+endfun
+
+map <F11> :call ProseMode()<CR>
 
 "folding for markdown
 set nocompatible
@@ -271,6 +289,9 @@ let g:syntastic_check_on_wq = 0
 
 map <Leader>c :SyntasticCheck<CR>
 
+"Removes the annoying swap
+set noswapfile
+
 "    ###########################
 "    #                         #
 "    # That's all, folks       #
@@ -283,5 +304,13 @@ map <Leader>c :SyntasticCheck<CR>
 "    #  powerline fonts, I'm   #
 "    #  afraid you're on       #
 "    #  your own, friendo      #
+"    #                         #
+"    #  All questions          #
+"    #  regarding              #
+"    #  "Are you actually      #
+"    #  insane? who would use  #
+"    #  those mappings?"       #
+"    #  will be directed to    #
+"    #  atleastitsnotemacs.com #
 "    #                         #
 "    ###########################
