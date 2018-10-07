@@ -15,7 +15,7 @@ xrdb -merge .Xresources
  
 # Fire up apps
  
-feh --bg-scale ~/Pictures/bg/1496390939106.png:large.jpeg &
+feh --bg-scale ~/Pictures/bg/1496390939106.png:large.jpeg
 
 #xscreensaver -no-splash &
 
@@ -28,7 +28,7 @@ feh --bg-scale ~/Pictures/bg/1496390939106.png:large.jpeg &
 #   sleep 3
 #   gnome-power-manager &
 #fi
-#trayer --edge top --align center --SetDockType true --SetPartialStrut true --expand true --widthtype request --transparent true --alpha 0 --tint 0x2d2d2d --height 16 &
+#trayer --edge top --align center --SetDockType true --SetPartialStrut true --expand true --widthtype request --transparent true --alpha 0 --tint 0x2d2d2d --height 16 && nm-applet
  
 exec xmonad
 

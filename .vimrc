@@ -101,7 +101,7 @@ Plugin 'https://github.com/kien/ctrlp.vim.git'
 	Plugin 'junegunn/limelight.vim'
 	
 	"vimPencil - prose style word wrap etc
-	Plugin 'reedes/vim-pencil'
+	"Plugin 'reedes/vim-pencil'
 
 "folding in .md org-mode style
 Plugin 'nelstrom/vim-markdown-folding'
@@ -251,7 +251,7 @@ filetype indent plugin on
 let g:limelight_conceal_ctermfg = 241
 
 "Enter prose mode
-map <F11> :Goyo <bar> :Limelight!! <bar> :TogglePencil <CR>
+map <F11> :Goyo <bar> :Limelight!! <CR>
 
 "folding for markdown
 set nocompatible
