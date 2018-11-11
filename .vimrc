@@ -69,11 +69,44 @@ Plugin 'Raimondi/delimitMate'
 "YouCompleteMe - Nice fuzzy autocompleter 
 Plugin 'https://github.com/Valloric/YouCompleteMe'
 
-"???
-"vim-slim - Syntax highlighting
-Plugin 'slim-template/vim-slim.git'
-"for rust:
-Plugin 'rust-lang/rust.vim'
+"vim-slim - syntax highlighting
+Plugin 'slim-template/vim-slim'
+	"for rust:
+	Plugin 'rust-lang/rust.vim'
+
+	"for typescript
+	Plugin 'leafgarland/typescript-vim'
+
+	"for javascript
+	Plugin 'pangloss/vim-javascript'
+
+	"python
+	Plugin 'https://github.com/hdima/python-syntax'
+	
+	"html5
+	Plugin 'https://github.com/othree/html5.vim'
+	
+	"scss
+	Plugin 'https://github.com/cakebaker/scss-syntax.vim'
+
+	"js libs
+	Plugin 'https://github.com/othree/javascript-libraries-syntax.vim'
+
+	"extra C
+	Plugin 'https://github.com/justinmk/vim-syntax-extra'
+
+	"dockerfile
+	Plugin 'https://github.com/ekalinin/Dockerfile.vim'
+
+	"arduino
+	Plugin 'sudar/vim-arduino-syntax'
+
+
+"auto load scripts something ???
+Plugin 'https://github.com/xolox/vim-misc'
+"Easytags - does something to tags that has something to do with syntax
+"highlighting...
+Plugin 'https://github.com/xolox/vim-easytags'
 
 "Airline - Status bar with cool looking arrows
 Plugin 'https://github.com/vim-airline/vim-airline'
@@ -137,16 +170,20 @@ set formatprg=stylish-haskell
 "characters in Vim. On a standard swedish QWERTY ö is on the home row. Waste of prime
 "real estate, if you ask me.
 
-"Anyway, disable these 3 commands if you're not a swedo:
+"or rather, I'll be content with this until i figure out how to switch
+"CapsLock to permanently act as Esc.
+
+"Disable these 3 commands if you're not a swedo:
 "binds ö to return to normal mode 
 imap ö <Esc> <Esc>
 vmap ö <Esc> <Esc>
-"binds Ctrl-o to ö
+"binds Ctrl-o to ö, in case you need to överleva on an öde ö
 imap <C-o> <C-K> ö
+imap <C-Ö> <C-K> Ö
 
-imap <F10> <C-K> Ö
-"Maps J to make a new line
-"map J o<Esc>
+imap <C-å> <C-K> ä
+imap <C-Å> <C-K> ä
+" (I realise this is silly. I really do.)
 
 "maps space to be the Leader command.
 map <Space> <Leader>
@@ -154,6 +191,9 @@ map <Space> <Leader>
 "Moves words like a Ctrl+arrow would in Word
 map H B
 map L E
+
+map J }
+map K {
 
 "switch active buffer between those on screen using space and directionals
 map <Leader>h <C-W>h
@@ -170,6 +210,7 @@ map <Leader>q :bdelete<CR>
 map <Leader>k :bn<CR>
 map <Leader>j :bp<CR>
 
+"substitute selection
 map <Leader>r :substitute 
 
 
@@ -238,8 +279,7 @@ endif
 
 " -- color scheme --
 set t_Co=256 
-"set t_ut=
-colorscheme gruvbox
+colorscheme noctu
 let g:airline_theme = 'codedark'
 
 
