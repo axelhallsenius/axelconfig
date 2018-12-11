@@ -175,8 +175,8 @@ set formatprg=stylish-haskell
 
 "Disable these 3 commands if you're not a swedo:
 "binds ö to return to normal mode 
-imap ö <Esc> <Esc>
-vmap ö <Esc> <Esc>
+imap öö <Esc> <Esc>
+vmap öö <Esc> <Esc>
 "binds Ctrl-o to ö, in case you need to överleva on an öde ö
 imap <C-o> <C-K> ö
 imap <C-Ö> <C-K> Ö
