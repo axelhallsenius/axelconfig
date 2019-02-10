@@ -1,27 +1,25 @@
 "########################################
 "       #                          #
 "       #                          #
-"   ###################################
-"   #                                 #
-"   # Axel Hallsenius' .vimrc         #
-"   #                                 #
-"   #  I use vim for all kinds of     #
-"   #  programming, and occationally  #
-"   # some fiction. That's where      #
-"   #  prose mode comes in.           #
-"   #                                 #
-"   # I've commented it a little bit. #
-"   #  However, it maybe a bit of a   #
-"   #  mess.                          #
-"   #                                 #
-"   # You can reach me @:             #
-"   # axelhallsenius@gmail.com        #
-"   #  or                             #
-"   #  your friendly local foobar     #
-"   #                                 #
-"   ###################################
-
-
+"   ####################################
+"   #                                  #
+"   # Axel Hallsenius' .vimrc          #
+"   #                                  #
+"   #  I use vim for all kinds of      #
+"   #  programming, and occationally   #
+"   #  some fiction. That's where      #
+"   #  prose mode comes in.            #
+"   #                                  #
+"   #  I've commented it a little bit. #
+"   #  However, it maybe a bit of a    #
+"   #  mess.                           #
+"   #                                  #
+"   #  You can reach me @:             #
+"   #  axelhallsenius@gmail.com        #
+"   #  or                              #
+"   #  your friendly local foobar      #
+"   #                                  #
+"   ####################################
 
 " Required things
 set nocompatible              " be iMproved, required
@@ -45,61 +43,65 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Raimondi/delimitMate'
 
 "Colorschemes
-	"Moar Colorschemes - flazz
-	Plugin 'flazz/vim-colorschemes'
+    "Moar Colorschemes - flazz
+    Plugin 'flazz/vim-colorschemes'
 
-	"Synthwave Colorscheme
-	Plugin 'exitface/synthwave.vim'
+    "Synthwave Colorscheme
+    Plugin 'exitface/synthwave.vim'
 
-	"Vim-code-dark colorscheme
-	Plugin 'tomasiser/vim-code-dark'
+    "Vim-code-dark colorscheme
+    Plugin 'tomasiser/vim-code-dark'
 
-	"Vimspectr - color scheme sythesis
-	Plugin 'nightsense/vimspectr'
-	
-	"Noctu - color scheme stuff
-	Plugin 'noahfrederick/vim-noctu'
+    "Vimspectr - color scheme sythesis
+    Plugin 'nightsense/vimspectr'
+    
+    "Noctu - color scheme stuff
+    Plugin 'noahfrederick/vim-noctu'
 
-	"Dark Tango color scheme
-	Plugin 'vim-scripts/darktango.vim'
-	
-	"Office
-	Plugin 'nightsense/office'
+    "Dark Tango color scheme
+    Plugin 'vim-scripts/darktango.vim'
+    
+    "Office
+    Plugin 'nightsense/office'
 
 "YouCompleteMe - Nice fuzzy autocompleter 
 Plugin 'https://github.com/Valloric/YouCompleteMe'
 
 "vim-slim - syntax highlighting
 Plugin 'slim-template/vim-slim'
-	"for rust:
-	Plugin 'rust-lang/rust.vim'
+"Syntax for other languages:
+    "for rust:
+    Plugin 'rust-lang/rust.vim'
 
-	"for typescript
-	Plugin 'leafgarland/typescript-vim'
+    "for typescript
+    Plugin 'leafgarland/typescript-vim'
 
-	"for javascript
-	Plugin 'pangloss/vim-javascript'
+    "for javascript
+    Plugin 'pangloss/vim-javascript'
 
-	"python
-	Plugin 'https://github.com/hdima/python-syntax'
-	
-	"html5
-	Plugin 'https://github.com/othree/html5.vim'
-	
-	"scss
-	Plugin 'https://github.com/cakebaker/scss-syntax.vim'
+    "python
+    Plugin 'https://github.com/hdima/python-syntax'
+    
+    "html5
+    Plugin 'https://github.com/othree/html5.vim'
+    
+    "scss
+    Plugin 'https://github.com/cakebaker/scss-syntax.vim'
 
-	"js libs
-	Plugin 'https://github.com/othree/javascript-libraries-syntax.vim'
+    "js libs
+    Plugin 'https://github.com/othree/javascript-libraries-syntax.vim'
 
-	"extra C
-	Plugin 'https://github.com/justinmk/vim-syntax-extra'
+    "extra C
+    Plugin 'https://github.com/justinmk/vim-syntax-extra'
 
-	"dockerfile
-	Plugin 'https://github.com/ekalinin/Dockerfile.vim'
+    "dockerfile
+    Plugin 'https://github.com/ekalinin/Dockerfile.vim'
 
-	"arduino
-	Plugin 'sudar/vim-arduino-syntax'
+    "arduino
+    Plugin 'sudar/vim-arduino-syntax'
+    
+    "haskell-vim - syntax highlighting for haskell
+    Plugin 'neovimhaskell/haskell-vim'
 
 
 "auto load scripts something ???
@@ -127,14 +129,14 @@ Plugin 'https://github.com/tpope/vim-fugitive'
 Plugin 'https://github.com/kien/ctrlp.vim.git'
 
 "Things for prose mode - took it from a blog, forgot which.
-	"Goyo - focused prose mode
-	Plugin 'junegunn/goyo.vim'
+    "Goyo - focused prose mode
+    Plugin 'junegunn/goyo.vim'
 
-	"Limelight - focuses on paragraph
-	Plugin 'junegunn/limelight.vim'
-	
-	"vimPencil - prose style word wrap etc
-	"Plugin 'reedes/vim-pencil'
+    "Limelight - focuses on paragraph
+    Plugin 'junegunn/limelight.vim'
+    
+    "vimPencil - prose style word wrap etc
+    "Plugin 'reedes/vim-pencil'
 
 "folding in .md org-mode style
 Plugin 'nelstrom/vim-markdown-folding'
@@ -142,8 +144,7 @@ Plugin 'nelstrom/vim-markdown-folding'
 "Syntastic - inline syntax checking
 Plugin 'vim-syntastic/syntastic'
 
-"haskell-vim - syntax highlighting for haskell
-Plugin 'neovimhaskell/haskell-vim'
+
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -158,32 +159,18 @@ syntax enable
 set number
 
 "makes tabspace 2 spaces
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 set formatprg=stylish-haskell
 
 
 "--------- Key Remaps --------
 
-"I run a swedish keyboard, and very rarely write the swedish special
-"characters in Vim. On a standard swedish QWERTY ö is on the home row. Waste of prime
-"real estate, if you ask me.
-
-"or rather, I'll be content with this until i figure out how to switch
-"CapsLock to permanently act as Esc.
-
-"Disable these 3 commands if you're not a swedo:
-"binds ö to return to normal mode 
-imap öö <Esc> <Esc>
-vmap öö <Esc> <Esc>
-"binds Ctrl-o to ö, in case you need to överleva on an öde ö
-imap <C-o> <C-K> ö
-imap <C-Ö> <C-K> Ö
-
-imap <C-å> <C-K> ä
-imap <C-Å> <C-K> ä
-" (I realise this is silly. I really do.)
+"binds h to return to normal mode 
+imap hh <Esc> <Esc>
+vmap hh <Esc> <Esc>
 
 "maps space to be the Leader command.
 map <Space> <Leader>
@@ -243,7 +230,7 @@ nnoremap <Leader>o :CtrlP<CR>
 "-- UltiSnips --
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="åå"
+let g:UltiSnipsExpandTrigger="öö"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -252,7 +239,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 "--Airline--
 if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
+    let g:airline_symbols = {}
 endif
 "let g:airline_symbols.space = \ua0"
 
@@ -266,15 +253,15 @@ set noshowmode
 
 "--Ranger File Manager - integration
 if !has('gui_running')
-	function RangerExplorer()
-		exec "silent !ranger --choosefile=/tmp/vim_ranger_current_file " . expand("%:p:h")
-		if filereadable('/tmp/vim_ranger_current_file')
-			exec 'edit ' . system('cat /tmp/vim_ranger_current_file')
-			call system('rm /tmp/vim_ranger_current_file')
-		endif
-		redraw!
-	endfun
-	map <Leader>x :call RangerExplorer()<CR>
+    function RangerExplorer()
+        exec "silent !ranger --choosefile=/tmp/vim_ranger_current_file " . expand("%:p:h")
+        if filereadable('/tmp/vim_ranger_current_file')
+            exec 'edit ' . system('cat /tmp/vim_ranger_current_file')
+            call system('rm /tmp/vim_ranger_current_file')
+        endif
+        redraw!
+    endfun
+    map <Leader>x :call RangerExplorer()<CR>
 endif
 
 " -- color scheme --
@@ -296,7 +283,7 @@ map <F11> :Goyo <bar> :Limelight!! <CR>
 "folding for markdown
 set nocompatible
 if has("autocmd")
-	filetype plugin indent on
+    filetype plugin indent on
 endif
 
 "Syntastic - still to fix
@@ -311,12 +298,16 @@ let g:syntastic_check_on_wq = 0
 
 map <Leader>c :SyntasticCheck<CR>
 
+"save 'view' between sessions. Saves folds thusly
+"autocmd BufWinLeave *.* mkview!
+"autocmd BufWinEnter *.* silent loadview
+
 "    ###########################
 "    #                         #
 "    # That's all, folks       #
 "    #                         #
-"    # Feel free to provide    #
-"    # feedback, criticism     #
+"    #  Feel free to provide   #
+"    #  feedback, criticism    #
 "    #  or ask me questions    #
 "    #                         #
 "    #  though in the case of  #
