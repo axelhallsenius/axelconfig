@@ -159,8 +159,8 @@ syntax enable
 set number
 
 "makes tabspace 2 spaces
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 set formatprg=stylish-haskell
@@ -297,6 +297,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 map <Leader>c :SyntasticCheck<CR>
+
+set encoding=utf-8
 
 "save 'view' between sessions. Saves folds thusly
 "autocmd BufWinLeave *.* mkview!
