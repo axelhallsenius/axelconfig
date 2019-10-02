@@ -156,7 +156,7 @@ filetype plugin indent on    " required
 syntax enable
 
 "Enables line numbers on the left
-set number
+set number! relativenumber!
 
 "makes tabspace 2 spaces
 set tabstop=2
@@ -202,6 +202,8 @@ map <Leader>r :substitute
 
 
 "-- EasyMotion --
+
+let g:EasyMotion_keys="asdfghjklqwertyuiopzxcvbnm"
 
 "easymove to 1 char
 map  ä <Plug>(easymotion-bd-f)
@@ -267,7 +269,7 @@ endif
 " -- color scheme --
 set t_Co=256 
 colorscheme noctu
-let g:airline_theme = 'codedark'
+let g:airline_theme = 'angr'
 
 
 "Automatic () pairing
