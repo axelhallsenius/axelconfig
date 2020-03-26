@@ -158,9 +158,9 @@ syntax enable
 "Enables line numbers on the left
 set number! relativenumber!
 
-"makes tabspace 2 spaces
-set tabstop=2
-set shiftwidth=2
+"makes tabspace 4 spaces
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
 set formatprg=stylish-haskell
@@ -280,7 +280,8 @@ filetype indent plugin on
 let g:limelight_conceal_ctermfg = 241
 
 "Enter prose mode
-map <F11> :Goyo <bar> :Limelight!! <CR>
+map <F11> :Goyo <CR> 
+":Limelight!! <CR>
 
 "folding for markdown
 set nocompatible
