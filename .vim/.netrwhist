@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/haxxel/confrepos/axelconfig/.vim/bundle/vim-easymotion'
 let g:netrw_dirhist_2='/home/haxxel/confrepos/axelconfig/.vim/bundle/vim-easymotion/plugin'
 let g:netrw_dirhist_3='/home/haxxel/confrepos/axelconfig/.vim/bundle/vim-easymotion'
+let g:netrw_dirhist_4='/home/haxxel/.ssh'

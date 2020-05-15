@@ -1,3 +1,5 @@
+"neovim config file
+"WIP
 "Vim-Plug Plugins
 
 "Req
