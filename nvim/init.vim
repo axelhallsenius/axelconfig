@@ -1,7 +1,8 @@
 "neovim config file
-"WIP
-"Vim-Plug Plugins
+"haxxel's config
+"built with st as terminal, and a nice nice nerd-font in mind.
 
+"Vim-Plug Plugins
 "Req
 call plug#begin()
 
@@ -12,7 +13,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'maxbrunsfeld/vim-yankstack'
 
 "Seoul Color scheme
-Plug 'junegunn/seoul256.vim'
+"Plug 'junegunn/seoul256.vim'
+
+"Nord colorscheme
+Plug 'https://github.com/arcticicestudio/nord-vim'
 
 "NerdTree - Nifty file finding sidebar
 Plug 'preservim/nerdtree'
@@ -35,6 +39,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "pencil - for writing non code
 Plug 'reedes/vim-pencil'
 
+"goyo - distraction free thingamajig
+Plug 'junegunn/goyo.vim'
+
 "vim-tex - LaTeX funcitons
 Plug 'lervag/vimtex'
 
@@ -44,6 +51,9 @@ Plug 'dense-analysis/ale'
 "fugitive - git integration
 Plug 'tpope/vim-fugitive'
 
+"vim-go - go language support for vim
+Plug 'fatih/vim-go'
+
 "Req
 call plug#end()
 
@@ -52,6 +62,7 @@ call plug#end()
 set encoding=UTF-8
 
 "Enable syntax highlighting
+set nocompatible
 syntax enable
 filetype plugin indent on
 
@@ -104,8 +115,9 @@ map <Leader>b :bp<CR>
 " seoul256 (dark):
 "   Range:   233 (darkest) ~ 239 (lightest)
 "   Default: 237
-let g:seoul256_background = 236
-colo seoul256
+"let g:seoul256_background = 236
+"colo seoul256
+colorscheme nord
 
 "Lightline relevant configuration
 set laststatus=2
@@ -130,10 +142,9 @@ let g:NERDTreeIndicatorMapCustom = {
 "Easymotion mappings
 let g:EasyMotion_keys="asdfghjklqwertyuiopzxcvbnm"
 
-"easymove to 1 char
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f  <Plug>(easymotion-overwin-f)
-
+"easymovesymotion-bd-f) to 1 char
+map � <Plug>(easymotion-bd-f)
+nmap � <Plug>(easymotion-overwin-f)
 
 
 
@@ -278,13 +289,6 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Resume latest coc list.
 "nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-
-
-
-
-
-
-
 " remap arrow keys
 nnoremap <Left> :bprev<CR>
 nnoremap <Right> :bnext<CR>
@@ -323,6 +327,7 @@ let g:lightline = {
     \ 'component': {
     \   'separator': '',
     \ },
+	\ 'colorscheme': 'nord',
     \ }
 
 " remap arrow keys
@@ -369,3 +374,12 @@ let g:lightline_buffer_minfextlen = 3
 
 " reserve length for other component (e.g. info, close)
 let g:lightline_buffer_reservelen = 20
+
+"vim-pencil config
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+augroup END
+
+" End
