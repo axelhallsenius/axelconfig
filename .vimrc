@@ -64,11 +64,15 @@ Plugin 'Raimondi/delimitMate'
     "Office
     Plugin 'nightsense/office'
 
+    "Nord
+    Plugin 'arcticicestudio/nord-vim'
+
 "YouCompleteMe - Nice fuzzy autocompleter 
 Plugin 'https://github.com/Valloric/YouCompleteMe'
 
 "vim-slim - syntax highlighting
 Plugin 'slim-template/vim-slim'
+
 "Syntax for other languages:
     "for rust:
     Plugin 'rust-lang/rust.vim'
@@ -103,12 +107,13 @@ Plugin 'slim-template/vim-slim'
     "haskell-vim - syntax highlighting for haskell
     Plugin 'neovimhaskell/haskell-vim'
 
-
+"vimtex - LaTeX functionality
+Plugin 'lervag/vimtex'  
 "auto load scripts something ???
 Plugin 'https://github.com/xolox/vim-misc'
 "Easytags - does something to tags that has something to do with syntax
 "highlighting...
-Plugin 'https://github.com/xolox/vim-easytags'
+"Plugin 'https://github.com/xolox/vim-easytags'
 
 "Airline - Status bar with cool looking arrows
 Plugin 'https://github.com/vim-airline/vim-airline'
@@ -144,7 +149,8 @@ Plugin 'nelstrom/vim-markdown-folding'
 "Syntastic - inline syntax checking
 Plugin 'vim-syntastic/syntastic'
 
-
+"vimwiki - personal wiki in vim
+Plugin 'vimwiki/vimwiki'
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -268,8 +274,9 @@ endif
 
 " -- color scheme --
 set t_Co=256 
-colorscheme noctu
-let g:airline_theme = 'angr'
+colorscheme nord
+"let g:airline_theme = 'angr'
+let g:airline_theme = 'nord'
 
 
 "Automatic () pairing
@@ -314,10 +321,5 @@ set encoding=utf-8
 "    #  Feel free to provide   #
 "    #  feedback, criticism    #
 "    #  or ask me questions    #
-"    #                         #
-"    #  though in the case of  #
-"    #  powerline fonts, I'm   #
-"    #  afraid you're on       #
-"    #  your own, friendo      #
 "    #                         #
 "    ###########################
